@@ -1,0 +1,273 @@
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Mon Dec 19 18:25:38 2022 by ig2451 on remote02
+
+
+Command: netlist elaborate
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/ig2451/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -tool propcheck
+    -d core
+
+
+## Elaborating Design...
+Reading MTI mapping for library mapping
+Writing all MTI mappings to vmap output ...
+
+Top level modules:
+	core
+
+Analyzing design...
+-- Loading module z0in_work.core
+-- Loading module z0in_work.CMEM_W
+-- Loading module z0in_work.CMEM
+-- Loading module z0in_work.alu
+-- Loading module z0in_work.REG_N
+-- Loading module z0in_work.counter
+-- Loading module z0in_work.fifo_shift_reg
+Optimizing 8 design-units (inlining 0/7 module instances, 0/1 cell instances):
+-- Optimizing module z0in_work.CMEM(fast)
+-- Optimizing module z0in_work.CMEM_W(fast)
+-- Optimizing module z0in_work.alu(fast)
+-- Optimizing module z0in_work.REG_N(fast)
+-- Optimizing module z0in_work.counter(fast)
+-- Optimizing module z0in_work.counter(fast__1)
+-- Optimizing module z0in_work.fifo_shift_reg(fast)
+-- Optimizing module z0in_work.core(fast)
+Optimized design name is zi_opt_csl_210768641_1
+End of log Mon Dec 19 18:25:49 2022
+
+
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Mon Dec 19 18:25:49 2022 by ig2451 on remote02
+
+
+Command: netlist create
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/ig2451/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -tool propcheck
+    -d core
+
+
+## Synthesizing netlist...
+Processing module 'Zin_BUF1'
+Processing module 'CMEM'
+Elaborating module 'CMEM'.
+Processing module 'CMEM_W'
+Elaborating module 'CMEM_W'.
+Processing module 'alu'
+Elaborating module 'alu'.
+Processing module 'REG_N'
+Elaborating module 'REG_N'.
+Processing module 'counter'
+Elaborating module 'counter'.
+Processing module 'counter(1)'
+Elaborating module 'counter(1)'.
+Processing module 'fifo_shift_reg'
+Elaborating module 'fifo_shift_reg'.
+Processing module 'core'
+Elaborating module 'core'.
+
+##Time Taken (Synthesis) = 2800000.000000 ticks = 2.800000 secs
+
+End of log Mon Dec 19 18:25:57 2022
+
+
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Mon Dec 19 18:25:58 2022 by ig2451 on remote02
+
+
+Command: formal compile
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/ig2451/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -d core
+
+
+## Processing Formal Logic...
+Processing module 'Zin_BUF1'
+Processing module 'CMEM'
+Restoring module 'CMEM'.
+Processing module 'CMEM_W'
+Restoring module 'CMEM_W'.
+Processing module 'alu'
+Restoring module 'alu'.
+Processing module 'REG_N'
+Restoring module 'REG_N'.
+Processing module 'counter'
+Restoring module 'counter'.
+Processing module 'counter(1)'
+Restoring module 'counter(1)'.
+Processing module 'fifo_shift_reg'
+Restoring module 'fifo_shift_reg'.
+Processing module 'core'
+Restoring module 'core'.
+Flattening design 'CMEM'.
+Flattening design 'CMEM_W'.
+Flattening design 'alu'.
+Flattening design 'REG_N'.
+Flattening design 'counter'.
+Flattening design 'counter(1)'.
+Flattening design 'fifo_shift_reg'.
+Flattening design 'core'.
+Info    : Detected reset.  Reset: rstn, polarity: synchronous, active: low.  [netlist-12]
+Info    : Detected clock.  Clock: clk, polarity: posedge.  [netlist-11]
+Info    : Detected clock.  Clock: clk, polarity: negedge.  [netlist-11]
+Error   : Design has combinational loop.  Please check 'Design Check Details' in 'formal_design.rpt'.  [formal-279]
+Design is processed for formal verification.  Design 'core'.
+
+Clocks
+------------------------------------------------------------------------------
+Port                                   Period         Waveform    Edges
+------------------------------------------------------------------------------
+clk                                        10              0 5    PE NE
+------------------------------------------------------------------------------
+
+Blackboxes
+------------------------------------------------------------------------------
+Module name                                                Reason
+------------------------------------------------------------------------------
+<no blackboxed modules>
+------------------------------------------------------------------------------
+
+Inferred directives
+------------------------------------------------------------------------------
+<no inferred directives>
+------------------------------------------------------------------------------
+
+Design is linked for formal analysis.  Design 'core'.
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.LATCHED_CEN'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.LATCHED_WEN'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.Qi'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[63]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[62]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[61]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[60]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[59]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[58]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[57]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[56]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[55]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[54]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[53]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[52]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[51]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[50]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[49]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[48]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[47]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[46]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[45]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[44]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[43]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[42]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[41]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[40]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[39]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[38]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[37]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[36]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[35]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[34]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[33]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[32]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[31]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[30]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[29]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[28]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[27]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[26]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[25]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[24]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[23]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[22]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[21]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[20]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[19]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[18]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[17]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[16]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[15]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[14]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[13]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[12]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[11]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[10]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[9]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[8]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[7]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[6]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[5]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[4]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[3]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[2]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.last_status[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.last_status[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[2]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[3]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[4]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[5]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[6]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[7]'.  [formal-280]
+Formal model has been created.
+
+Property Summary
+-------------------------------------------------------------------------------
+Total  Directives :8
+Assert Directives :8
+Assume Directives :0
+Cover  Directives :0
+
+SVA Summary
+-------------------------------------------------------------------------------
+SVA Directive Type        Directives           Checkers
+-------------------------------------------------------------------------------
+Assert                         8                   8
+Assume                         0                   0
+Cover                          0                   0
+-------------------------------------------------------------------------------
+
+Design Checks Summary
+-------------------------------------------------------------------------------
+Check                              Found
+-------------------------------------------------------------------------------
+COMBO_LOOP                              2
+DECLARATION_UNDRIVEN                   27
+LOGIC_UNDRIVEN                          2
+-------------------------------------------------------------------------------
+Total                                 31
+-------------------------------------------------------------------------------
+
+
+To see results in the GUI run:
+qverify /homes/user/stud/fall21/ig2451/FV-Hardware/FIR/Output_Results/formal_compile.db
+
+
+Message Summary
+---------------------------------------------------------------------------
+Count  Type     Message ID         Summary
+---------------------------------------------------------------------------
+    1  Error    formal-279         Design has combinational loop.
+   77  Error    formal-280         Multiply-driven register/latch found.
+    2  Info     netlist-11         Detected clock.
+    1  Info     netlist-12         Detected reset.
+
+Summary: 78 Errors, 0 Warnings in formal compile
+Final Process Statistics: Max memory 643MB, CPU time 6s, Total time 24s
+End of log Mon Dec 19 18:26:03 2022
+
+

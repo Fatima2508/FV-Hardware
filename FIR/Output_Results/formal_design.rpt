@@ -1,0 +1,568 @@
+
+Questa Version 2019.2_1 linux_x86_64 18 May 2019
+
+-------------------------------------------------------------------------------
+Design Report
+Created Mon Dec 19 18:26:02 2022
+-------------------------------------------------------------------------------
+
+
+Design 'core'
+===============================================================================
+
+
+---------------------------------------
+Design Summary                    Count
+---------------------------------------
+Clocks                                1
+  User-specified                      1
+  Inferred                            0
+Resets                                1
+  User-specified                      0
+  Inferred                            1
+Control Point Bits                  145
+  DUT Input Bits                     43
+  Cut Point Bits                      0
+  Black Box Output Bits               0
+  Undriven Wire Bits                102
+  Unresolved RHS Bits                 0
+State Bits                         2316
+  Design Register Bits             1124
+  Design Latch Bits                1192
+Storage Structures       
+  Counters                            3
+  RAMs                                4
+Black Boxes                           0
+Constants Bits                        0
+---------------------------------------
+
+Detailed Design Information
+===============================================================================
+
+
+Clocks
+------------------------------------------------------------------------------
+Port                                   Period         Waveform    Edges
+------------------------------------------------------------------------------
+clk                                        10              0 5    PE NE
+------------------------------------------------------------------------------
+
+Resets
+-------
+  rstn [inferred] (Active Low)
+
+Constants
+------------------
+  <none>
+
+Cut Points
+----------
+  <none>
+
+Black Box Outputs
+-----------------
+  <none>
+
+Undriven Wires
+--------------
+  cmem_w_inst.cmem_inst.LAST_Qi  (16 bits)
+  cmem_w_inst.cmem_inst.NOT_A0  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_A1  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_A2  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_A3  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_A4  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_A5  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_CEN  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_CLK_MINH  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_CLK_MINL  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_CLK_PER  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D0  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D1  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D10  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D11  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D12  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D13  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D14  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D15  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D2  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D3  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D4  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D5  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D6  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D7  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D8  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_D9  (1 bit)
+  cmem_w_inst.cmem_inst.NOT_WEN  (1 bit)
+  cmem_w_inst.cmem_inst.TCEN_flag  (1 bit)
+  cmem_w_inst.cmem_inst.dummy_qb  (16 bits)
+  cmem_w_inst.cmem_inst.last_status[2]  (18 bits)
+  cmem_w_inst.cmem_inst.last_status[3]  (18 bits)
+  fifo_index  (6 bits)
+
+Unresolved RHS Bits
+-------------------
+  <none>
+
+Latches
+-------
+  cmem_w_inst.cmem_inst.LATCHED_A[0]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_A[1]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_A[2]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_A[3]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_A[4]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_A[5]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_CEN  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[0]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[10]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[11]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[12]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[13]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[14]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[15]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[1]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[2]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[3]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[4]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[5]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[6]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[7]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[8]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_D[9]  (1 bit)
+  cmem_w_inst.cmem_inst.LATCHED_WEN  (1 bit)
+  cmem_w_inst.cmem_inst.Qi  (16 bits)
+  cmem_w_inst.cmem_inst.mem[0]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[10]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[11]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[12]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[13]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[14]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[15]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[16]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[17]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[18]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[19]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[1]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[20]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[21]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[22]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[23]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[24]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[25]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[26]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[27]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[28]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[29]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[2]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[30]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[31]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[32]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[33]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[34]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[35]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[36]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[37]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[38]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[39]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[3]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[40]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[41]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[42]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[43]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[44]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[45]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[46]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[47]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[48]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[49]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[4]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[50]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[51]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[52]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[53]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[54]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[55]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[56]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[57]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[58]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[59]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[5]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[60]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[61]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[62]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[63]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[6]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[7]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[8]  (18 bits)
+  cmem_w_inst.cmem_inst.mem[9]  (18 bits)
+
+Counters
+--------
+  clk1_counter  (28 bits)
+  i_inst.Q_INT  (6 bits)
+  n_inst.Q_INT  (14 bits)
+
+RAMs
+----
+  cmem_w_inst.cmem_inst.last_status (Depth 4)
+  cmem_w_inst.cmem_inst.mem (Depth 64)
+  cmem_w_inst.cmem_inst.rows (Depth 8)
+  fifo_inst.reg_file (Depth 64)
+
+Black Boxes (User-specified)
+----------------------------
+  <none>
+
+Black Boxes (Inferred)
+----------------------
+  <none>
+
+
+
+Port Constraints
+-------------------------------------------------------------------------------
+Type                 Clock Domain         Value         Port
+-------------------------------------------------------------------------------
+Unconstrained        <none>               -            'caddr'
+Unconstrained        <none>               -            'cin'
+Clock                <n/a>                -            'clk'
+Unconstrained        <none>               -            'cload'
+Unconstrained        <none>               -            'din'
+Unconstrained        <none>               -            'rstn'
+Unconstrained        <none>               -            'start'
+Unconstrained        <none>               -            'valid_in'
+-------------------------------------------------------------------------------
+
+Instance Usage
+===============================================================================
+Count  Module          Location
+-------------------------------------------------------------------------------
+   1   CMEM            /user/stud/fall21/ig2451/FV-Hardware/FIR/CMEM.sv (Line 53)
+   1   CMEM_W          /user/stud/fall21/ig2451/FV-Hardware/FIR/CMEM_W.sv (Line 1)
+   1   REG_N           /user/stud/fall21/ig2451/FV-Hardware/FIR/REG_N.sv (Line 1)
+   1   alu             /user/stud/fall21/ig2451/FV-Hardware/FIR/alu.sv (Line 1)
+   1   counter         /user/stud/fall21/ig2451/FV-Hardware/FIR/counter.sv (Line 1)
+   1   counter(1)      /user/stud/fall21/ig2451/FV-Hardware/FIR/counter.sv (Line 1)
+   1   fifo_shift_reg  /user/stud/fall21/ig2451/FV-Hardware/FIR/fifo_shift_reg.sv (Line 1)
+
+
+
+Design Checks Details
+===============================================================================
+Type      : COMBO_LOOP
+*** Word-level Loop ***
+Loop Signal: cmem_w_inst.cmem_inst.mem[63] (Latch)
+
+Type      : COMBO_LOOP
+*** Word-level Loop ***
+Loop Signal: cmem_w_inst.cmem_inst.last_status[0] (Latch)
+
+Register/Latch Multiply Driven Details
+===============================================================================
+Module    : CMEM
+Name      : LATCHED_CEN
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : LATCHED_WEN
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : Qi
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[63]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[62]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[61]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[60]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[59]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[58]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[57]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[56]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[55]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[54]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[53]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[52]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[51]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[50]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[49]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[48]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[47]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[46]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[45]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[44]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[43]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[42]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[41]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[40]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[39]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[38]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[37]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[36]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[35]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[34]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[33]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[32]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[31]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[30]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[29]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[28]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[27]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[26]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[25]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[24]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[23]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[22]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[21]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[20]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[19]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[18]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[17]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[16]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[15]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[14]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[13]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[12]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[11]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[10]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[9]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[8]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[7]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[6]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[5]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[4]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[3]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[2]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[1]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : mem[0]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : last_status[0]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : last_status[1]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[0]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[1]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[2]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[3]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[4]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[5]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[6]
+Instance  : cmem_w_inst.cmem_inst
+
+Module    : CMEM
+Name      : rows[7]
+Instance  : cmem_w_inst.cmem_inst
+

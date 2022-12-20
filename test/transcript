@@ -1,0 +1,23 @@
+# //  Questa Sim-64
+# //  Version 2019.2_1 linux_x86_64 May 13 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim testbench -suppress 3812 -suppress 2697 -suppress 8617 -suppress 151 -suppress 143 -suppress 3009,2685,2718 -uvmcontrol=disable -t fs "+notimingchecks" 
+# Start time: 18:15:56 on Dec 16,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.testbench(fast)
+do wave.do
+# ** Error: (vish-4014) No objects found matching '/testbench/clk'.
+# Executing ONERROR command at macro ./wave.do line 3
+# End time: 18:18:09 on Dec 16,2022, Elapsed time: 0:02:13
+# Errors: 3, Warnings: 0

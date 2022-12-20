@@ -1,0 +1,10 @@
+Zin_BUF1.utg.db:0
+CMEM_588120257.utg.db:1642
+CMEM_W_1768196762.utg.db:14831
+alu_1421425162.utg.db:17266
+REG_N_1877319523.utg.db:19879
+counter_1935477094.utg.db:22533
+counter_113621539.utg.db:25178
+fifo_shift_reg_72891415.utg.db:27838
+core_782303978.utg.db:31338
+core.utg.db:39298

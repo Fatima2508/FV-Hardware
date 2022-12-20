@@ -4,12 +4,14 @@
 `define QUARTER_CLOCK_PERIOD_READ 125    // 2MHz
 `define HALF_CLOCK_PERIOD_WRITE 50000 // 10kHz
 `define QSIM_OUT_FN "./qsim.out"
-`define MATLAB_OUT_FN_CMEM "../inputs/random_gen_b.result"
-`define MATLAB_OUT_FN_IMEM "../inputs/random_gen_x.result"
-`define QSIM_OUT_FILE "./fir_fi_short.result"
+`define MATLAB_OUT_FN_CMEM "/user/stud/fall21/ig2451/FV-Hardware/FIR/inputs/random_gen_b.result"
+`define MATLAB_OUT_FN_IMEM "/user/stud/fall21/ig2451/FV-Hardware/FIR/inputs/random_gen_x.result"
+`define QSIM_OUT_FILE "/user/stud/fall21/ig2451/FV-Hardware/FIR/fir_fi_short.result"
 
-module testbench();
-    reg clk1, clk2, rstn, start;
+module testbench;
+    reg clk1 = 0;
+    reg clk2 = 0;
+    reg rstn, start;
     reg [15:0] din;
     reg valid_in;
     reg [15:0] cin;
@@ -31,16 +33,19 @@ module testbench();
         .valid_in(valid_in), .cin(cin), .caddr(caddr), .cload(cload), .dout(dout),
         .valid_out(valid_out));
 
-    always begin
-        #`QUARTER_CLOCK_PERIOD_READ
-        clk2 = 0'b1;
-        forever clk2 = #`HALF_CLOCK_PERIOD_READ ~clk2;
-    end
+    always #`HALF_CLOCK_PERIOD_READ clk1 = ~clk1;
+    always #`HALF_CLOCK_PERIOD_WRITE clk2 = ~clk2;
 
-    always begin
-        clk1 = 0'b1;
-        forever clk1 = #`HALF_CLOCK_PERIOD_WRITE ~clk1;
-    end
+    // always begin
+    //     #`QUARTER_CLOCK_PERIOD_READ
+    //     clk2 = 0'b1;
+    //     forever clk2 = #`HALF_CLOCK_PERIOD_READ ~clk2;
+    // end
+
+    // always begin
+    //     clk1 = 0'b1;
+    //     forever clk1 = #`HALF_CLOCK_PERIOD_WRITE ~clk1;
+    // end
 
     initial begin
         matlab_out_file_CMEM = $fopen(`MATLAB_OUT_FN_CMEM, "r");
@@ -66,8 +71,8 @@ module testbench();
         // $dumpvars(0, testbench.core_0);
 
         // Start test
-        clk1 = 0;
-        clk2 = 0;
+        // clk1 = 0;
+        // clk2 = 0;
         rstn = 0;
         start = 0;
 
@@ -108,8 +113,8 @@ module testbench();
             $display("The written data does match the read data! :) ");
         end
 
-        $dumpall;
-        $dumpflush;
+        // $dumpall;
+        // $dumpflush;
         $fclose(matlab_out_file_IMEM);
         $fclose(matlab_out_file_CMEM);
         $fclose(qsim_out_file);

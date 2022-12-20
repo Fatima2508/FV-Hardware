@@ -1,0 +1,2 @@
+#! /bin/bash 
+/tools/mentor/questa_2019.2_1/linux_x86_64/bin/qverifypm --monitor --host remote02 --port 38695 --wd /homes/user/stud/fall21/ig2451/FV-Hardware/FIR --type master --binary /tools/mentor/questa_2019.2_1/linux_x86_64/bin/qverifyfk --id 0 -gui -tool prove -import_db Output_Results/formal_compile.db -od Output_Results -client_host remote02 -client_port 44111 -netcache /homes/user/stud/fall21/ig2451/FV-Hardware/FIR/Output_Results/qcache/FORMAL/NET -pm_host remote02 -pm_port 38695   
