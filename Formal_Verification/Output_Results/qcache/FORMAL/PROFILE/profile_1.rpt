@@ -1,0 +1,29 @@
+================================================================================
+== Profile: REAL-TIME, CPU-freq = 4.00 GHz
+                                                          Calls Real-Time  Parent 
+                                                                  (milli) fraction
+
+    <zixl_543IiP35>~_zixl                                                1      72.7 (100.0%)
+  zixl_5eAt1-I3L-ePP4~_zixl                                              1      72.7         
+    zixl_5eAt1-I3L-1LqiL1~_zixl                                          1       2.7 (  3.7%)
+      zixl_iLS3r2iPL~_zixl                                               1       1.9 ( 72.3%)
+        zixl_IUTe-y3ieS-6IPZ-AIIAO~_zixl                                 1       1.9 ( 98.5%)
+        <zixl_I152>~_zixl                                                        0.0 (  1.4%)
+      zixl_A5iP-I1rt [E]~_zixl                                           1       0.3 ( 11.4%)
+      zixl_4r-4Pee-S1e2A~_zixl                                           1       0.1 (  2.8%)
+        zixl_A5iP-I1rt [R]~_zixl                                         1       0.0 ( 56.8%)
+        zixl_A5iP-51LS [R]~_zixl                                         1       0.0 ( 12.0%)
+        <zixl_I152>~_zixl                                                        0.0 ( 31.3%)
+      zixl_95eAt1-t52A21-4Pee~_zixl                                      1       0.1 (  2.5%)
+        zixl_A5iP-I1rt [T]~_zixl                                         1       0.0 ( 70.3%)
+        zixl_A5iP-51LS [T]~_zixl                                         1       0.0 ( 14.0%)
+        <zixl_I152>~_zixl                                                        0.0 ( 15.7%)
+      <zixl_I152>~_zixl                                                          0.3 ( 10.3%)
+    <zixl_I152>~_zixl                                                           69.9 ( 96.2%)
+
+
+================================================================================
+== Profile: PEAK-MEMORY, CPU-freq = 4.00 GHz
+                                                          Calls   Peak-Mb         
+                                                                                  
+

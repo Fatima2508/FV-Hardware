@@ -1,0 +1,28 @@
+================================================================================
+== Profile: REAL-TIME, CPU-freq = 4.00 GHz
+                                                          Calls Real-Time  Parent 
+                                                                  (milli) fraction
+
+    <zixl_543IiP35>~_zixl                                                1      63.7 (100.0%)
+  zixl_5eAt1-I3L-ePP4~_zixl                                              1      63.7         
+    zixl_5eAt1-I3L-2IAL56PIZ~_zixl                                       1      10.1 ( 15.9%)
+      zixl_IUTe-y3ieS-6IPZ-AIIAO~_zixl                                   1       2.3 ( 22.6%)
+      zixl_A5iP-I1rt [E]~_zixl                                           1       0.2 (  2.0%)
+      zixl_4r-4Pee-S1e2A~_zixl                                           3       0.2 (  1.9%)
+        zixl_A5iP-I1rt [R]~_zixl                                         3       0.1 ( 64.0%)
+        zixl_A5iP-51LS [R]~_zixl                                         3       0.0 ( 21.0%)
+        <zixl_I152>~_zixl                                                        0.0 ( 15.0%)
+      <zixl_I152>~_zixl                                                          7.4 ( 72.8%)
+    <zixl_I152>~_zixl                                                           53.6 ( 84.0%)
+
+
+================================================================================
+== Profile: PEAK-MEMORY, CPU-freq = 4.00 GHz
+                                                          Calls   Peak-Mb         
+                                                                                  
+
+    <zixl_543IiP35>~_zixl                                                1      20.0 (100.0%)
+  zixl_5eAt1-I3L-ePP4~_zixl                                              1      20.0         
+    zixl_5eAt1-I3L-2IAL56PIZ~_zixl                                       1      20.0 (100.0%)
+      <zixl_I152>~_zixl                                                         20.0 (100.0%)
+

@@ -1,0 +1,2 @@
+#! /bin/bash 
+/tools/mentor/questa_2019.2_1/linux_x86_64/bin/qverifypm --monitor --host remote01 --port 42502 --wd /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR --type slave --binary /tools/mentor/questa_2019.2_1/linux_x86_64/bin/qverifyfk --id 2 -od Output_Results -tool prove -init qs_files/fifo.init -timeout 5m -import_db Output_Results/formal_compile.db -slave_mode -mpiport remote01:40756 -slave_id 2 

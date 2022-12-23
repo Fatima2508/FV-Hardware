@@ -1,0 +1,155 @@
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Fri Dec 23 13:31:08 2022 by fd2508 on remote01
+
+
+Command: netlist elaborate
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -tool propcheck
+    -d fifo_shift_reg
+
+
+## Elaborating Design...
+Reading MTI mapping for library mapping
+Writing all MTI mappings to vmap output ...
+
+Top level modules:
+	fifo_shift_reg
+
+Analyzing design...
+-- Loading module z0in_work.fifo_shift_reg
+-- Loading module z0in_work.ovl_no_overflow
+-- Loading module z0in_work.ovl_no_underflow
+Warning : Vopt warning.  ./fifo_shift_reg.sv(43): (vopt-2241) Connection width does not match width of port 'fire'. The port definition is at: /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_underflow.v(6).  [parser-285]
+        : Elaboration will continue.
+Warning : Vopt warning.  ./fifo_shift_reg.sv(41): (vopt-2241) Connection width does not match width of port 'fire'. The port definition is at: /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_overflow.v(6).  [parser-285]
+        : Elaboration will continue.
+Optimizing 3 design-units (inlining 0/3 module instances):
+-- Optimizing module z0in_work.ovl_no_overflow(fast)
+-- Optimizing module z0in_work.ovl_no_underflow(fast)
+-- Optimizing module z0in_work.fifo_shift_reg(fast)
+Optimized design name is zi_opt_csl_1817315319_1
+Summary: 2 Warnings in processing "netlist elaborate"
+End of log Fri Dec 23 13:31:10 2022
+
+
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Fri Dec 23 13:31:10 2022 by fd2508 on remote01
+
+
+Command: netlist create
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -tool propcheck
+    -d fifo_shift_reg
+
+
+## Synthesizing netlist...
+Processing module 'ovl_no_overflow'
+Elaborating module 'ovl_no_overflow'.
+Processing module 'ovl_no_underflow'
+Elaborating module 'ovl_no_underflow'.
+Processing module 'fifo_shift_reg'
+Elaborating module 'fifo_shift_reg'.
+
+##Time Taken (Synthesis) = 170000.000000 ticks = 0.170000 secs
+
+Summary: 2 Warnings in processing "netlist create"
+End of log Fri Dec 23 13:31:11 2022
+
+
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+log created Fri Dec 23 13:31:11 2022 by fd2508 on remote01
+
+
+Command: formal compile
+Command arguments:
+    -zdb
+      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+    -d fifo_shift_reg
+
+
+## Processing Formal Logic...
+Processing module 'ovl_no_overflow'
+Restoring module 'ovl_no_overflow'.
+Processing module 'ovl_no_underflow'
+Restoring module 'ovl_no_underflow'.
+Processing module 'fifo_shift_reg'
+Restoring module 'fifo_shift_reg'.
+Flattening design 'ovl_no_overflow'.
+Flattening design 'ovl_no_underflow'.
+Flattening design 'fifo_shift_reg'.
+Info    : Detected reset.  Reset: fifo_reset, polarity: synchronous, active: high.  [netlist-12]
+Info    : Detected clock.  Clock: read_clk, polarity: posedge.  [netlist-11]
+Info    : Detected clock.  Clock: write_clk, polarity: posedge.  [netlist-11]
+Info    : Detected clock.  Clock: write_clk, polarity: negedge.  [netlist-11]
+Info    : Detected clock.  Clock: read_clk, polarity: negedge.  [netlist-11]
+Design is processed for formal verification.  Design 'fifo_shift_reg'.
+
+Clocks
+------------------------------------------------------------------------------
+Port                                   Period         Waveform    Edges
+------------------------------------------------------------------------------
+read_clk                                   10              0 5    PE NE
+write_clk                                  20             0 10    PE NE
+------------------------------------------------------------------------------
+
+Blackboxes
+------------------------------------------------------------------------------
+Module name                                                Reason
+------------------------------------------------------------------------------
+<no blackboxed modules>
+------------------------------------------------------------------------------
+
+Inferred directives
+------------------------------------------------------------------------------
+<no inferred directives>
+------------------------------------------------------------------------------
+
+Design is linked for formal analysis.  Design 'fifo_shift_reg'.
+Formal model has been created.
+
+Property Summary
+-------------------------------------------------------------------------------
+Total  Directives :4
+Assert Directives :2
+Assume Directives :0
+Cover  Directives :2
+
+SVA Summary
+-------------------------------------------------------------------------------
+SVA Directive Type        Directives           Checkers
+-------------------------------------------------------------------------------
+Assert                         2                   2
+Assume                         0                   0
+Cover                          2                   2
+-------------------------------------------------------------------------------
+
+To see results in the GUI run:
+qverify /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/formal_compile.db
+
+
+Message Summary
+---------------------------------------------------------------------------
+Count  Type     Message ID         Summary
+---------------------------------------------------------------------------
+    2  Warning  parser-285         Vopt warning.
+    4  Info     netlist-11         Detected clock.
+    1  Info     netlist-12         Detected reset.
+
+Summary: 2 Warnings in formal compile
+Final Process Statistics: Max memory 479MB, CPU time 0s, Total time 4s
+End of log Fri Dec 23 13:31:12 2022
+
+

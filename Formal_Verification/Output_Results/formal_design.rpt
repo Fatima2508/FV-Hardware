@@ -1,0 +1,117 @@
+
+Questa Version 2019.2_1 linux_x86_64 18 May 2019
+
+-------------------------------------------------------------------------------
+Design Report
+Created Fri Dec 23 13:31:12 2022
+-------------------------------------------------------------------------------
+
+
+Design 'fifo_shift_reg'
+===============================================================================
+
+
+---------------------------------------
+Design Summary                    Count
+---------------------------------------
+Clocks                                2
+  User-specified                      2
+  Inferred                            0
+Resets                                1
+  User-specified                      0
+  Inferred                            1
+Control Point Bits                   26
+  DUT Input Bits                     26
+  Cut Point Bits                      0
+  Black Box Output Bits               0
+  Undriven Wire Bits                  0
+  Unresolved RHS Bits                 0
+State Bits                         1030
+  Design Register Bits             1030
+  Design Latch Bits                   0
+Storage Structures       
+  Counters                            0
+  RAMs                                1
+Black Boxes                           0
+Constants Bits                        0
+---------------------------------------
+
+Detailed Design Information
+===============================================================================
+
+
+Clocks
+------------------------------------------------------------------------------
+Port                                   Period         Waveform    Edges
+------------------------------------------------------------------------------
+read_clk                                   10              0 5    PE NE
+write_clk                                  20             0 10    PE NE
+------------------------------------------------------------------------------
+
+Resets
+-------
+  fifo_reset [inferred] (Active High)
+
+Constants
+------------------
+  <none>
+
+Cut Points
+----------
+  <none>
+
+Black Box Outputs
+-----------------
+  <none>
+
+Undriven Wires
+--------------
+  <none>
+
+Unresolved RHS Bits
+-------------------
+  <none>
+
+Latches
+-------
+  <none>
+
+Counters
+--------
+  <none>
+
+RAMs
+----
+  reg_file (Depth 64)
+
+Black Boxes (User-specified)
+----------------------------
+  <none>
+
+Black Boxes (Inferred)
+----------------------
+  <none>
+
+
+
+Port Constraints
+-------------------------------------------------------------------------------
+Type                 Clock Domain         Value         Port
+-------------------------------------------------------------------------------
+Unconstrained        <none>               -            'fifo_reset'
+Unconstrained        <none>               -            'index'
+Clock                <n/a>                -            'read_clk'
+Clock                <n/a>                -            'write_clk'
+Unconstrained        <none>               -            'write_data'
+Unconstrained        <none>               -            'write_en'
+-------------------------------------------------------------------------------
+
+Instance Usage
+===============================================================================
+Count  Module          Location
+-------------------------------------------------------------------------------
+   1   ovl_no_overflow /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_overflow.v (Line 6)
+   1   ovl_no_underflow /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_underflow.v (Line 6)
+
+
+

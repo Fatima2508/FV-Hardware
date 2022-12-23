@@ -1,0 +1,43 @@
+>8
+v366
+t37
+c38
+#37 p26198 @fifo_shift_reg
+#36 p26046 @zi_oper_38_o16_i1024
+#35 p25905 @zi_oper_38_o1_i3
+#34 p24760 @zi_oper_32_o1024_64*i16
+#33 p24597 @zi_mux_o6_i1_2*i6
+#32 p24317 @zi_dff_o16_i16_5*i1_i16_3*i1
+#31 p24144 @zi_rport_i1024_i6_o16
+#30 p20383 @ovl_no_underflow_1942462332
+#29 p20092 @zi_property_ovl_cover.ovl_cover_basic.cover_test_expr_at_min_ovl_no_underflow_i1_i6_i1
+#28 p19829 @zi_property_ovl_assert.A_ASSERT_NO_UNDERFLOW_P_ovl_no_underflow_i1_i6_i1
+#27 p17573 @zi_property_logic_ovl_cover.ovl_cover_basic.cover_test_expr_at_min_ovl_no_underflow
+#26 p17426 @zi_oper_17_o1_2*i1
+#25 p13519 @zi_property_logic_ovl_assert.A_ASSERT_NO_UNDERFLOW_P_ovl_no_underflow
+#24 p9741 @ovl_no_overflow_719753218
+#23 p9452 @zi_property_ovl_cover.ovl_cover_basic.cover_test_expr_at_max_ovl_no_overflow_i1_i6_i1
+#22 p9193 @zi_property_ovl_assert.A_ASSERT_NO_OVERFLOW_P_ovl_no_overflow_i1_i6_i1
+#9 p1372 @zi_const_0_o32
+#8 p1198 @zi_oper_32_o32_i26_i6
+#7 p1070 @zi_const_26'b0_o26
+#6 p924 @zi_oper_14_o1_2*i1
+#5 p793 @zi_oper_24_o1_i1
+#4 p647 @zi_oper_64_o1_2*i1
+#0 p0 @zi_dff_o1_10*i1
+#1 p253 @zi_oper_25_o1_2*i1
+#2 p399 @zi_const_1'b1_o1
+#3 p520 @zi_assign_o1_i1
+#10 p1492 @zi_oper_12_o1_2*i32
+#11 p1651 @zi_const_63_o32
+#12 p1774 @zi_oper_14_o1_2*i32
+#13 p1933 @zi_const_1'b0_o1
+#14 p2055 @zi_property_logic_ovl_assert.A_ASSERT_NO_OVERFLOW_P_ovl_no_overflow
+#15 p5945 @zi_dff_o6_i6_5*i1_i6_3*i1
+#16 p6221 @zi_const_6'b0_o6
+#17 p6346 @zi_oper_16_o1_2*i6
+#18 p6503 @zi_property_logic_ovl_cover.ovl_cover_basic.cover_test_expr_at_max_ovl_no_overflow
+#19 p8752 @zi_latch_o1_4*i1
+#20 p8921 @zi_const_3'b0_o3
+#21 p9046 @zi_oper_16_o1_2*i1
+<8

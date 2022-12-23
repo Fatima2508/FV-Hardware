@@ -1,0 +1,76 @@
+# 
+# Questa Static Verification System
+# Version 2019.2_1 linux_x86_64 18 May 2019
+
+
+Command-line arguments:
+	-jobs 4 \ 
+	-init qs_files/fifo.init \ 
+	-timeout 5m 
+
+Warning : Deprecated option to '* verify' command.  Option '-init'. Use 'formal init' directive instead.  [formal-303]
+Info    : Using initialization sequence file to initialize design state.  File '/homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/qs_files/fifo.init'.  [formal-205]
+Applying synthesis semantics to design: fifo_shift_reg
+[00:00:00] Status: Done 0/4, Update 0/4, Proof radius min=0, avg=0.0, Mem=0GB
+[00:00:00] Established connection with process, Hostname=remote01, pid=7426.
+[00:00:00] Established connection with process, Hostname=remote01, pid=7429.
+[00:00:00] Established connection with process, Hostname=remote01, pid=7433.
+[00:00:00] Established connection with process, Hostname=remote01, pid=7436.
+[00:00:00] Covered @1: no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
+[00:00:00] Fired @2: no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+[00:00:00] Fired @2: no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
+[00:00:00] Covered @2: no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+[00:00:00] Status: Done 4/4, Update 4/4, Proof radius min=N/A, avg=N/A, Mem=1GB
+
+---------------------------------------
+Property Summary                  Count
+---------------------------------------
+Assumed                               0
+Proven                                0
+Covered                               2
+Inconclusive                          0
+Fired                                 2
+Uncoverable                           0
+---------------------------------------
+Total                                 4
+---------------------------------------
+
+
+--------- Process Statistics ----------
+Elapsed Time                       0 s 
+-------- Orchestration Process --------
+------------ remote01:7417 ------------
+CPU Time                           0 s 
+Peak Memory                      0.4 GB
+---------- Engine Processes -----------
+------------ remote01:7426 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7429 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7433 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7436 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+---------------------------------------
+
+
+Message Summary
+---------------------------------------------------------------------------
+Count  Type     Message ID         Summary
+---------------------------------------------------------------------------
+    1  Warning  formal-303         Deprecated option to '* verify' command.
+    1  Info     formal-205         Using initialization sequence file to initialize design state.
+
+Final Process Statistics: Peak Memory 0.36GB, Cumulative CPU Time 0s, Elapsed Time 0s
+
+To see results in the GUI run:
+qverify /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/formal_verify.db
+

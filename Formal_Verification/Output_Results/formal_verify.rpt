@@ -1,0 +1,220 @@
+-------------------------------------------------------------------------------
+Questa PropCheck Version 2019.2_1 linux_x86_64 18 May 2019
+-------------------------------------------------------------------------------
+Report Generated               : Fri Dec 23 13:31:13 2022
+-------------------------------------------------------------------------------
+
+Command-line arguments:
+	-jobs 4 \ 
+	-init qs_files/fifo.init \ 
+	-timeout 5m 
+
+-------------------------------------------------------------------------------
+
+Clock Relationships
+-------------------------------------------------------------------------------
+read_clk  : PNPN
+write_clk : P-N-
+
+
+Port Constraints
+-------------------------------------------------------------------------------
+Type                 Clock Domain         Value         Port
+-------------------------------------------------------------------------------
+Unconstrained        <none>               -            'fifo_reset'
+Unconstrained        <none>               -            'index'
+Clock                <n/a>                -            'read_clk'
+Clock                <n/a>                -            'write_clk'
+Unconstrained        <none>               -            'write_data'
+Unconstrained        <none>               -            'write_en'
+-------------------------------------------------------------------------------
+
+
+
+Using user-specified initialization sequence:
+
+---------------- BEGIN RESET SEQUENCE --------------
+$default_clock write_clk
+$default_clock read_clk
+$default_input_value 0
+fifo_reset = 1'b0
+##
+fifo_reset = 1'b0
+
+---------------- END RESET SEQUENCE ----------------
+
+
+-------------------------------------------------------------------------------
+Assumptions (0)
+-------------------------------------------------------------------------------
+<no assumptions>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Active Targets (4)
+-------------------------------------------------------------------------------
+no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
+no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
+no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+X Registers in Starting State
+-------------------------------------------------------------------------------
+  0 registers (100.0% of 0 in sequential fanin of properties)
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Z Registers in Starting State
+-------------------------------------------------------------------------------
+  0 registers (100.0% of 0 in sequential fanin of properties)
+-------------------------------------------------------------------------------
+
+
+---------------------------------------
+Formal Netlist Statistics         Count
+---------------------------------------
+Control Point Bits                    7
+  DUT Input Bits                      7
+  Cut Point Bits                      0
+  Black Box Output Bits               0
+  Undriven Wire Bits                  0
+  Modeling Bits                       0
+State Bits                           10
+  Counter State Bits                  0
+  RAM State Bits                      0
+  Register State Bits                 0
+  Property State Bits                10
+Logic Gates                          58
+  Design Gates                       17
+  Property Gates                     41
+---------------------------------------
+
+
+-------------------------------------------------------------------------------
+Targets Fired (2)
+-------------------------------------------------------------------------------
+no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
+no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Targets Covered (2)
+-------------------------------------------------------------------------------
+no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
+no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Assumptions Used in Proofs
+-------------------------------------------------------------------------------
+<no assumptions used in proofs>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Assumptions Used in Bounded Proofs
+-------------------------------------------------------------------------------
+<no assumptions used in bounded proofs>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Assumptions Used in Unsatisfiable Sanity Checks
+-------------------------------------------------------------------------------
+<no assumptions used in unsatisfiable sanity checks>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Assumptions Used in Bounded Unsatisfiable Sanity Checks
+-------------------------------------------------------------------------------
+<no assumptions used in bounded unsatisfiable sanity checkss>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Target Waveforms (4)
+-------------------------------------------------------------------------------
+  TB Time(ns) Dist  Target
+-------------------------------------------------------------------------------
+           40    2  no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
+           20    1  no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
+           30    2  no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+           30    2  no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+-------------------------------------------------------------------------------
+
+
+---------------------------------------
+Target Waveforms Summary by Distance
+---------------------------------------
+Distance                          Count
+---------------------------------------
+  1 cycle                             1
+  2 cycles                            3
+---------------------------------------
+Total                                 4
+---------------------------------------
+
+
+-------------------------------------------------------------------------------
+Proof Radius Summary by Target
+-------------------------------------------------------------------------------
+<all targets either proven or fired>
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Engine Performance
+---------------------- Proofs -------------------------- Waveforms ------------
+   Engine |  Safety Liveness Vacuity  Sanity |  Safety Liveness Vacuity  Sanity
+-------------------------------------------------------------------------------
+       10 |       0        0       0       0 |       4        0       2       0
+-------------------------------------------------------------------------------
+
+
+---------------------------------------
+Property Summary                  Count
+---------------------------------------
+Assumed                               0
+Proven                                0
+Covered                               2
+Inconclusive                          0
+Fired                                 2
+Uncoverable                           0
+---------------------------------------
+Total                                 4
+---------------------------------------
+
+
+--------- Process Statistics ----------
+Elapsed Time                       0 s 
+-------- Orchestration Process --------
+------------ remote01:7417 ------------
+CPU Time                           0 s 
+Peak Memory                      0.4 GB
+---------- Engine Processes -----------
+------------ remote01:7426 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7429 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7433 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+------------ remote01:7436 ------------
+CPU Time                           0 s 
+Peak Memory                      0.1 GB
+CPU Utilization                    0 % 
+---------------------------------------
+

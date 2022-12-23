@@ -1,0 +1,16 @@
+<LayoutInfo CurrentRTLLayout="Default" version="1">
+ <Layout Name="Default" Type="RTL">
+  <dockareas top="0" left="300" right="188" bottom="286"/>
+  <window undocked="0" y="65" type="rtl" x="0" height="1124" visible="1" width="1862"/>
+  <window dock_location="bottom" undocked="0" y="0" type="transcript" x="0" visible="1"/>
+  <window undocked="1" y="93" type="wave" x="166" height="756" visible="0" title="Wave (no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P)" width="1344"/>
+  <window undocked="1" y="170" type="wave" id="1" x="465" height="756" visible="0" title="Wave (no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max)" width="1344"/>
+  <window undocked="0" y="0" type="source" x="0" visible="1"/>
+  <window dock_location="left" undocked="0" y="0" type="structure" x="0" visible="0"/>
+  <window dock_location="right" undocked="0" y="0" type="zinschematicview" x="0" visible="0" title="Schematic"/>
+  <window dock_location="left" undocked="0" y="0" type="zindutview" x="0" visible="1" title="Design"/>
+  <window dock_location="bottom" undocked="0" y="0" type="zinformalproperties" x="0" visible="1" title="Properties"/>
+  <window dock_location="right" undocked="0" y="0" type="zinformalcontrolpointsnew" x="0" visible="1" title="Control Points"/>
+  <window dock_location="bottom" undocked="0" y="0" type="zinformalpolicychecks" x="0" visible="0" title="Design Checks"/>
+ </Layout>
+</LayoutInfo>
