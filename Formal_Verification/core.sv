@@ -167,10 +167,7 @@ module core (clk, rstn, start, din, valid_in, cin, caddr, cload, dout, valid_out
     state0_1: assert property ((start && (curr_state == S0)) |-> ##1 (curr_state == S1));
     state0_2: assert property ((start && (curr_state == S0)) |-> ##65 (curr_state == S2));
     state0_3: assert property ((start && (curr_state == S0)) |-> ##66 (curr_state == S3));
-    
-
-    
-    
+        
     // Verify ALU operations 
     alu_y_enabled : assert property ((y_en) |-> ##1 ($past(alu_sum_out) == alu_sum_in)); 
     ai_x_never_x : assert property (^alu_x !== 16'hxxxx);
@@ -179,5 +176,32 @@ module core (clk, rstn, start, din, valid_in, cin, caddr, cload, dout, valid_out
 
     alu_overflow_msb : assert property ((alu_x[15] == 1 && cmem_out[15] == 1 && !alu_zero && alu_sum_in!==0) |->  ($signed(alu_sum_out) > 41'd65535));
     alu_fir_reset : assert property ((!y_rstn) |-> ##1 (alu_sum_in == 0));
+
+    //check sequence of states
+    state_sequence0: assert property ((curr_state == S0) |=> (curr_state == S0 or curr_state == S1));
+    state_sequence1: assert property ((curr_state == S1) |=> (curr_state == S1 or curr_state == S2));
+    state_sequence2: assert property ((curr_state == S2) |=> (curr_state == S3));
+    state_sequence3: assert property ((curr_state == S3) |=> (curr_state == S0 or curr_state == S1 or curr_state == S3));
+
+    //correct state after expected number of cycles once the state machine starts
+    state_cycle0: assert property ((start && (curr_state == S0)) |-> ##1 (curr_state == S1));
+    state_cycle1: assert property ((start && (curr_state == S0)) |-> ##65 (curr_state == S2));
+    state_cycle2: assert property ((start && (curr_state == S0)) |-> ##66 (curr_state == S3));
+    
+    //assumption start can only be high in state 0 
+    start_assume: assume property (start |-> (curr_state == S0));
+
+    //results available after expected number of cycles
+    property result_cycle;
+        disable iff(!rstn)
+            ($rose(start) |-> ##65 $rose(valid_out));
+    endproperty
+    result_cycle_1: assert property (result_cycle);
+
+    //control signals
+    control_signal1: assert property ($rose(i_en) |-> ##[1:$] $rose(n_en) |-> ##[1:$] $rose(fifo_write_en));
+    control_signal2: assert property ($rose(!i_rstn) |-> ##[1:$] $rose(i_en));
+    control_signal3: assert property ($rose(!n_rstn) |-> ##[1:$] $rose(n_en));
+    control_signal4: assert property ($rose(!y_rstn) |-> ##[1:$] $rose(y_en));
 
 endmodule
