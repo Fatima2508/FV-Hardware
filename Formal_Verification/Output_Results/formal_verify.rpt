@@ -1,32 +1,33 @@
 -------------------------------------------------------------------------------
 Questa PropCheck Version 2019.2_1 linux_x86_64 18 May 2019
 -------------------------------------------------------------------------------
-Report Generated               : Fri Dec 23 13:31:13 2022
+Report Generated               : Fri Dec 23 22:10:51 2022
 -------------------------------------------------------------------------------
 
 Command-line arguments:
 	-jobs 4 \ 
-	-init qs_files/fifo.init \ 
+	-init qs_files/core.init \ 
 	-timeout 5m 
 
 -------------------------------------------------------------------------------
 
 Clock Relationships
 -------------------------------------------------------------------------------
-read_clk  : PNPN
-write_clk : P-N-
+clk : PN
 
 
 Port Constraints
 -------------------------------------------------------------------------------
 Type                 Clock Domain         Value         Port
 -------------------------------------------------------------------------------
-Unconstrained        <none>               -            'fifo_reset'
-Unconstrained        <none>               -            'index'
-Clock                <n/a>                -            'read_clk'
-Clock                <n/a>                -            'write_clk'
-Unconstrained        <none>               -            'write_data'
-Unconstrained        <none>               -            'write_en'
+Unconstrained        <none>               -            'caddr'
+Unconstrained        <none>               -            'cin'
+Clock                <n/a>                -            'clk'
+Unconstrained        <none>               -            'cload'
+Unconstrained        <none>               -            'din'
+Unconstrained        <none>               -            'rstn'
+Unconstrained        <none>               -            'start'
+Unconstrained        <none>               -            'valid_in'
 -------------------------------------------------------------------------------
 
 
@@ -34,87 +35,187 @@ Unconstrained        <none>               -            'write_en'
 Using user-specified initialization sequence:
 
 ---------------- BEGIN RESET SEQUENCE --------------
-$default_clock write_clk
-$default_clock read_clk
+$default_clock clk
 $default_input_value 0
-fifo_reset = 1'b0
+rstn = 1'b1
 ##
-fifo_reset = 1'b0
+rstn = 1'b0
 
 ---------------- END RESET SEQUENCE ----------------
 
 
 -------------------------------------------------------------------------------
-Assumptions (0)
+Assumptions (1)
 -------------------------------------------------------------------------------
-<no assumptions>
+start_assume
 -------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
-Active Targets (4)
+Active Targets (39)
 -------------------------------------------------------------------------------
-no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
-no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
-no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
-no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+ai_b_never_x
+ai_x_never_x
+alu_fir_reset
+alu_inst.accuracy_0
+alu_inst.accuracy_1
+alu_inst.overflow_sum
+alu_inst.x_b_never_x
+alu_overflow_msb
+alu_y_enabled
+ao_never_x
+cmem_w_inst.address_in_range_1
+cmem_w_inst.address_known_1
+cmem_w_inst.data_known_1
+control_signal1
+control_signal2
+control_signal3
+control_signal4
+fifo_inst.check_fifo_full
+fifo_inst.check_rst_raddr
+fifo_inst.check_rst_rdata
+fifo_inst.fifo_cover_0
+fifo_inst.fifo_cover_1
+fifo_inst.fifo_cover_2
+fifo_inst.rdata_never_x
+result_cycle_1
+state0
+state0_1
+state0_2
+state0_3
+state1
+state2
+state3
+state_cycle0
+state_cycle1
+state_cycle2
+state_sequence0
+state_sequence1
+state_sequence2
+state_sequence3
 -------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
 X Registers in Starting State
 -------------------------------------------------------------------------------
-  0 registers (100.0% of 0 in sequential fanin of properties)
+  75 registers (100.0% of 75 in sequential fanin of properties)
+-------------------------------------------------------------------------------
+  clk1 (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 13) 1'bx
+  clk1_counter (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 14) 28'bxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  clk1_delay (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 87) 1'bx
+  clk1_delay_meta (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 86) 1'bx
+  cmem_w_inst.cmem_inst.NOT_A (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/CMEM.sv, Line 101) 6'bxxxxxx
+  cmem_w_inst.cmem_inst.NOT_D (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/CMEM.sv, Line 118) 16'bxxxxxxxxxxxxxxxx
+  curr_state (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 44) 2'bxx
+  fifo_inst.read_addr (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 16) 6'bxxxxxx
+  fifo_inst.reg_file (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 15) 16'bXXXXXXXXXXXXXXXX
+  i_inst.Q_INT (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/counter.sv, Line 7) 6'bxxxxxx
+  n_inst.Q_INT (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/counter.sv, Line 7) 14'bxxxxxxxxxxxxxx
+  y_n.Q_INT (File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/REG_N.sv, Line 7) 
+    41'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 -------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
 Z Registers in Starting State
 -------------------------------------------------------------------------------
-  0 registers (100.0% of 0 in sequential fanin of properties)
+  0 registers (0.0% of 75 in sequential fanin of properties)
 -------------------------------------------------------------------------------
 
 
 ---------------------------------------
 Formal Netlist Statistics         Count
 ---------------------------------------
-Control Point Bits                    7
-  DUT Input Bits                      7
+Control Point Bits                   54
+  DUT Input Bits                     18
   Cut Point Bits                      0
   Black Box Output Bits               0
   Undriven Wire Bits                  0
-  Modeling Bits                       0
-State Bits                           10
-  Counter State Bits                  0
-  RAM State Bits                      0
-  Register State Bits                 0
-  Property State Bits                10
-Logic Gates                          58
-  Design Gates                       17
-  Property Gates                     41
+  Modeling Bits                      36
+State Bits                         1391
+  Counter State Bits                 48
+  RAM State Bits                   1024
+  Register State Bits                52
+  Property State Bits               267
+Logic Gates                        4790
+  Design Gates                     4314
+  Property Gates                    476
 ---------------------------------------
 
 
 -------------------------------------------------------------------------------
-Targets Fired (2)
+Targets Proven (32)
 -------------------------------------------------------------------------------
-no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
-no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+ai_b_never_x
+ai_x_never_x
+alu_fir_reset
+alu_inst.accuracy_0
+alu_inst.accuracy_1
+alu_inst.overflow_sum
+alu_inst.x_b_never_x
+alu_y_enabled
+ao_never_x
+cmem_w_inst.address_in_range_1
+cmem_w_inst.address_known_1
+cmem_w_inst.data_known_1
+control_signal1
+control_signal2
+control_signal3
+control_signal4
+fifo_inst.rdata_never_x
+result_cycle_1
+state0
+state0_1
+state0_2
+state0_3
+state1
+state2
+state3
+state_cycle0
+state_cycle1
+state_cycle2
+state_sequence0
+state_sequence1
+state_sequence2
+state_sequence3
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Targets Fired with Warnings (4)
+-------------------------------------------------------------------------------
+alu_overflow_msb
+fifo_inst.check_fifo_full
+fifo_inst.check_rst_raddr
+fifo_inst.check_rst_rdata
 -------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
 Targets Covered (2)
 -------------------------------------------------------------------------------
-no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
-no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+fifo_inst.fifo_cover_1
+fifo_inst.fifo_cover_2
+-------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------
+Targets Uncoverable (1)
+-------------------------------------------------------------------------------
+fifo_inst.fifo_cover_0
 -------------------------------------------------------------------------------
 
 
 -------------------------------------------------------------------------------
 Assumptions Used in Proofs
 -------------------------------------------------------------------------------
-<no assumptions used in proofs>
+Target:  result_cycle_1
+		start_assume
+Target:  state0_2
+		start_assume
+Target:  state_cycle1
+		start_assume
 -------------------------------------------------------------------------------
 
 
@@ -140,14 +241,16 @@ Assumptions Used in Bounded Unsatisfiable Sanity Checks
 
 
 -------------------------------------------------------------------------------
-Target Waveforms (4)
+Target Waveforms (6)
 -------------------------------------------------------------------------------
   TB Time(ns) Dist  Target
 -------------------------------------------------------------------------------
-           40    2  no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
-           20    1  no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
-           30    2  no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
-           30    2  no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+          200    1  alu_overflow_msb
+        10300  102  fifo_inst.check_fifo_full
+          150    1  fifo_inst.check_rst_raddr
+          150    1  fifo_inst.check_rst_rdata
+          150    1  fifo_inst.fifo_cover_1
+          150    1  fifo_inst.fifo_cover_2
 -------------------------------------------------------------------------------
 
 
@@ -156,10 +259,10 @@ Target Waveforms Summary by Distance
 ---------------------------------------
 Distance                          Count
 ---------------------------------------
-  1 cycle                             1
-  2 cycles                            3
+  1 cycle                             5
+102 cycles                            1
 ---------------------------------------
-Total                                 4
+Total                                 6
 ---------------------------------------
 
 
@@ -175,46 +278,49 @@ Engine Performance
 ---------------------- Proofs -------------------------- Waveforms ------------
    Engine |  Safety Liveness Vacuity  Sanity |  Safety Liveness Vacuity  Sanity
 -------------------------------------------------------------------------------
-       10 |       0        0       0       0 |       4        0       2       0
+        7 |      22        0       0       0 |       5        0      20       0
+       10 |       8        0       0       0 |       1        0       7       0
+       12 |       3        0       0       0 |       0        0       0       0
 -------------------------------------------------------------------------------
 
 
 ---------------------------------------
 Property Summary                  Count
 ---------------------------------------
-Assumed                               0
-Proven                                0
+Assumed                               1
+Proven                               32
 Covered                               2
 Inconclusive                          0
-Fired                                 2
-Uncoverable                           0
+Fired                                 4
+  Fired with Warning                  4
+Uncoverable                           1
 ---------------------------------------
-Total                                 4
+Total                                40
 ---------------------------------------
 
 
 --------- Process Statistics ----------
-Elapsed Time                       0 s 
+Elapsed Time                      13 s 
 -------- Orchestration Process --------
------------- remote01:7417 ------------
-CPU Time                           0 s 
+----------- remote02:32242 ------------
+CPU Time                           1 s 
 Peak Memory                      0.4 GB
 ---------- Engine Processes -----------
------------- remote01:7426 ------------
-CPU Time                           0 s 
-Peak Memory                      0.1 GB
-CPU Utilization                    0 % 
------------- remote01:7429 ------------
-CPU Time                           0 s 
-Peak Memory                      0.1 GB
-CPU Utilization                    0 % 
------------- remote01:7433 ------------
-CPU Time                           0 s 
-Peak Memory                      0.1 GB
-CPU Utilization                    0 % 
------------- remote01:7436 ------------
-CPU Time                           0 s 
-Peak Memory                      0.1 GB
-CPU Utilization                    0 % 
+----------- remote02:32250 ------------
+CPU Time                          13 s 
+Peak Memory                      0.5 GB
+CPU Utilization                  100 % 
+----------- remote02:32255 ------------
+CPU Time                          13 s 
+Peak Memory                      0.3 GB
+CPU Utilization                  100 % 
+----------- remote02:32257 ------------
+CPU Time                          13 s 
+Peak Memory                      0.2 GB
+CPU Utilization                  100 % 
+----------- remote02:32260 ------------
+CPU Time                          13 s 
+Peak Memory                      0.2 GB
+CPU Utilization                  100 % 
 ---------------------------------------
 

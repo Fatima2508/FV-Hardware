@@ -4,7 +4,7 @@
  <app argc="8">
   <argv pos="0" value="/tools/mentor/questa_2019.2_1/linux_x86_64/share/modeltech/bin/../linux_x86_64/Visualizer/bin/hdlstudio"/>
   <argv pos="1" value="-I/tools/mentor/questa_2019.2_1/linux_x86_64/share/modeltech/bin/../linux_x86_64/Visualizer/bin/../tb/incl"/>
-  <argv pos="2" value="+designfile+/homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/VISUALIZER/design.bin"/>
+  <argv pos="2" value="+designfile+/homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/qcache/VISUALIZER/design.bin"/>
   <argv pos="3" value="+show_pi_drvr_rcvr"/>
   <argv pos="4" value="+max_drv_rec_cnt=10000"/>
   <argv pos="5" value="+no_splash"/>
@@ -12,33 +12,33 @@
   <argv pos="7" value="+external_client"/>
  </app>
  <window_config>
-  <dockareas top="0" left="300" right="188" bottom="286"/>
-  <window undocked="0" y="65" type="rtl" x="0" height="1124" visible="1" width="1862"/>
-  <window dock_location="bottom" undocked="0" y="0" type="transcript" x="0" visible="1"/>
-  <window undocked="1" y="93" type="wave" x="166" height="756" visible="0" title="Wave (no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P)" width="1344"/>
-  <window undocked="1" y="170" type="wave" id="1" x="465" height="756" visible="0" title="Wave (no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max)" width="1344"/>
-  <window undocked="0" y="0" type="source" x="0" visible="1"/>
-  <window dock_location="left" undocked="0" y="0" type="structure" x="0" visible="0"/>
-  <window dock_location="right" undocked="0" y="0" type="zinschematicview" x="0" visible="0" title="Schematic"/>
-  <window dock_location="left" undocked="0" y="0" type="zindutview" x="0" visible="1" title="Design"/>
-  <window dock_location="bottom" undocked="0" y="0" type="zinformalproperties" x="0" visible="1" title="Properties"/>
-  <window dock_location="right" undocked="0" y="0" type="zinformalcontrolpointsnew" x="0" visible="1" title="Control Points"/>
-  <window dock_location="bottom" undocked="0" y="0" type="zinformalpolicychecks" x="0" visible="0" title="Design Checks"/>
+  <dockareas top="0" right="188" bottom="649" left="250"/>
+  <window height="914" width="1536" x="1" undocked="0" type="rtl" visible="1" y="24"/>
+  <window dock_location="bottom" x="0" undocked="0" type="transcript" visible="1" y="0"/>
+  <window height="756" width="1344" title="Wave (no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P)" x="166" undocked="1" type="wave" visible="0" y="93"/>
+  <window height="756" width="1344" title="Wave (no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max)" x="465" id="1" undocked="1" type="wave" visible="0" y="170"/>
+  <window x="0" undocked="0" type="source" visible="1" y="0"/>
+  <window dock_location="left" x="0" undocked="0" type="structure" visible="0" y="0"/>
+  <window dock_location="right" title="Schematic" x="0" undocked="0" type="zinschematicview" visible="0" y="0"/>
+  <window dock_location="left" title="Design" x="0" undocked="0" type="zindutview" visible="1" y="0"/>
+  <window dock_location="bottom" height="649" width="1536" title="Properties" x="1" undocked="1" type="zinformalproperties" visible="0" y="240"/>
+  <window dock_location="right" title="Control Points" x="0" undocked="0" type="zinformalcontrolpointsnew" visible="0" y="0"/>
+  <window dock_location="bottom" title="Design Checks" x="0" undocked="0" type="zinformalpolicychecks" visible="1" y="0"/>
  </window_config>
  <wave_file_mgr>
-  <waveFile waveType="0" tagName="F2" fileName="/tmp/propcheck.7493_240/DesignConsts.db"/>
+  <waveFile fileName="/tmp/propcheck.32524_404/DesignConsts.db" tagName="F0" waveType="0"/>
  </wave_file_mgr>
  <gui>
   <main_window visible="1">
-   <srcbrowser primary="true" value_tooltip_mode="true" value_annotation_mode="true" instancename="fifo_shift_reg.no_overflow"/>
+   <srcbrowser primary="true" value_tooltip_mode="true" instancename="core" value_annotation_mode="true"/>
    <sourcetclcommands>
     <tcl command="src activate source"/>
-    <tcl command="src top 26"/>
+    <tcl command="src top 39"/>
    </sourcetclcommands>
    <edge_gui cur_selection="AnyEdge"/>
   </main_window>
-  <watchTower_cur_setting customDisplayTimeUnitListStr="" curRadix="8" curActiveWaveFile="F2" curDisplayTimeUnitStr="1ns" curDisplayTimeUnit="-9">
-   <curTime lowtime="0" hightime="0"/>
+  <watchTower_cur_setting curDisplayTimeUnitStr="1ns" customDisplayTimeUnitListStr="" curRadix="8" curDisplayTimeUnit="-9" curActiveWaveFile="F0">
+   <curTime hightime="0" lowtime="0"/>
   </watchTower_cur_setting>
   <drv_rec_data drivers="true"/>
  </gui>

@@ -1,8 +1,16 @@
 >8
 v366
-t2
-c3
-#2 p6077 @fifo_shift_reg
-#1 p3034 @ovl_no_underflow_1942462332
-#0 p0 @ovl_no_overflow_719753218
+t10
+c11
+#10 p13170 @core
+#3 p7359 @alu_1421425162
+#2 p6620 @CMEM_W_1881928550
+#1 p186 @CMEM_588120257
+#0 p0 @Zin_BUF1
+#4 p8375 @REG_N_1877319523
+#5 p9080 @counter_1935477094
+#6 p9792 @counter_113621539
+#7 p10500 @ovl_no_overflow_5_1500908493
+#8 p10997 @ovl_no_underflow_5_1500908493
+#9 p11496 @fifo_shift_reg_72891415
 <8

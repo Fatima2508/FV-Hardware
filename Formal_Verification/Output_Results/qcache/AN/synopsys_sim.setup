@@ -1,5 +1,5 @@
 work > default
-default : /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/./work
+default : /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/./work
 std : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../std
 ieee : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../ieee
 vital2000 : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../vital2000
@@ -22,4 +22,4 @@ ieee_env : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../ieee_en
 infact : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../infact
 vhdlopt_lib : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../vhdlopt_lib
 vh_ux01v_lib : /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../vh_ux01v_lib
-z0in_work_ctrl : /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/.//Output_Results/qcache/AN/zin_vopt_work
+z0in_work_ctrl : /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/.//Output_Results/qcache/AN/zin_vopt_work

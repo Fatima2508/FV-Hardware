@@ -3,113 +3,379 @@ Property Report
 -------------------------------------------------------------------------------
 Questa Formal Version 2019.2_1 linux_x86_64 18 May 2019
 -------------------------------------------------------------------------------
-Report Generated               : Fri Dec 23 13:31:12 2022
+Report Generated               : Fri Dec 23 22:10:49 2022
 -------------------------------------------------------------------------------
 
 Property Summary
 -------------------------------------------------------------------------------
-Total    Directives :4
-Assert   Directives :2
-Assume   Directives :0
-Cover    Directives :2
+Total    Directives :40
+Assert   Directives :36
+Assume   Directives :1
+Cover    Directives :3
 
 
 SVA Summary
 -------------------------------------------------------------------------------
 SVA Directive Type        Directives           Checkers
 -------------------------------------------------------------------------------
-Assert                         2                   2
-Assume                         0                   0
-Cover                          2                   2
+Assert                        36                  36
+Assume                         1                   1
+Cover                          3                   3
 -------------------------------------------------------------------------------
 
+
+Property Checks Summary
+-------------------------------------------------------------------------------
+Count Check
+-------------------------------------------------------------------------------
+    4 SAFETY_EMPTY (Safety empty property)
+    5 ALWAYS_PASSES (Property always passes)
+-------------------------------------------------------------------------------
 
 Compiled Properties:
 -------------------------------------------------------------------------------
 Assertions:
-    no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
-    no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
+    ai_b_never_x
+    ai_x_never_x
+    alu_fir_reset
+    alu_inst.accuracy_0
+    alu_inst.accuracy_1
+    alu_inst.overflow_sum
+    alu_inst.x_b_never_x
+    alu_overflow_msb
+    alu_y_enabled
+    ao_never_x
+    cmem_w_inst.address_in_range_1
+    cmem_w_inst.address_known_1
+    cmem_w_inst.data_known_1
+    control_signal1
+    control_signal2
+    control_signal3
+    control_signal4
+    fifo_inst.check_fifo_full
+    fifo_inst.check_rst_raddr
+    fifo_inst.check_rst_rdata
+    fifo_inst.rdata_never_x
+    result_cycle_1
+    state0
+    state0_1
+    state0_2
+    state0_3
+    state1
+    state2
+    state3
+    state_cycle0
+    state_cycle1
+    state_cycle2
+    state_sequence0
+    state_sequence1
+    state_sequence2
+    state_sequence3
+Assumptions:
+    start_assume
 Covers:
-    no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
-    no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
+    fifo_inst.fifo_cover_0
+    fifo_inst.fifo_cover_1
+    fifo_inst.fifo_cover_2
 
 
 ===============================================================================
-Module: ovl_no_overflow
+Module: core
 ===============================================================================
 Parameters: 
-    parameter  severity_level = 1
-    parameter  width = 6
-    parameter  min = 0
-    parameter  max = 63
-    parameter  property_type = 0
-    parameter  msg = VIOLATION
-    parameter  coverage_level = 2
-    parameter  clock_edge = 1
-    parameter  reset_polarity = 0
-    parameter  gating_type = 1
-    parameter  assert_name = OVL_NO_OVERFLOW
-    parameter  OVL_COVER_SANITY_ON = 0
-    parameter  OVL_COVER_BASIC_ON = 2
-    parameter  OVL_COVER_CORNER_ON = 0
-    parameter  OVL_COVER_STATISTIC_ON = 0
+    parameter  DIVISOR = 28'b11001000
+    parameter  S0 = 2'b0
+    parameter  S1 = 2'b1
+    parameter  S2 = 2'b10
+    parameter  S3 = 2'b11
 Summary
 -------------------------------------------------------------------------------
-Assertions   : 1 
-Assumptions  : 0 
-Covers       : 1 
+Assertions   : 25 
+Assumptions  : 1 
+Covers       : 0 
 -------------------------------------------------------------------------------
-assert ovl_assert.A_ASSERT_NO_OVERFLOW_P (sva)
-  Instance: no_overflow.ovl_assert.A_ASSERT_NO_OVERFLOW_P
-  Location: File /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/sva05/assert_no_overflow_logic.sv, Line 35
-  Severity: info
-  Message: VIOLATION
-  Stats:   depth=2 gates=13 flops=1
+assert state0 (sva)
+  Instance: core.state0
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 161
+  Severity: error
+  Stats:   depth=2 gates=6 flops=1
 
-cover ovl_cover.ovl_cover_basic.cover_test_expr_at_max (sva)
-  Instance: no_overflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_max
-  Location: File /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/sva05/assert_no_overflow_logic.sv, Line 90
-  Severity: info
-  Message: VIOLATION
+assert state1 (sva)
+  Instance: core.state1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 162
+  Severity: error
+  Stats:   depth=2 gates=6 flops=1
+
+assert state2 (sva)
+  Instance: core.state2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 163
+  Severity: error
+  Stats:   depth=2 gates=5 flops=1
+
+assert state3 (sva)
+  Instance: core.state3
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 164
+  Severity: error
+  Stats:   depth=2 gates=7 flops=1
+
+assert state0_1 (sva)
+  Instance: core.state0_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 167
+  Severity: error
+  Stats:   depth=2 gates=8 flops=2
+
+assert state0_2 (sva)
+  Instance: core.state0_2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 168
+  Severity: error
+  Stats:   depth=66 gates=72 flops=66
+
+assert state0_3 (sva)
+  Instance: core.state0_3
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 169
+  Severity: error
+  Stats:   depth=67 gates=73 flops=67
+
+assert alu_y_enabled (sva)
+  Instance: core.alu_y_enabled
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 172
+  Severity: error
+  Stats:   depth=2 gates=7 flops=2
+
+assert ai_x_never_x (sva)
+  Instance: core.ai_x_never_x
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 173
+  Severity: error
+  Stats:   depth=1 gates=0 flops=0
+  ALWAYS_PASSES (Property always passes) (warning) 
+
+assert ai_b_never_x (sva)
+  Instance: core.ai_b_never_x
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 174
+  Severity: error
+  Stats:   depth=1 gates=0 flops=0
+  ALWAYS_PASSES (Property always passes) (warning) 
+
+assert ao_never_x (sva)
+  Instance: core.ao_never_x
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 175
+  Severity: error
+  Stats:   depth=1 gates=0 flops=0
+  ALWAYS_PASSES (Property always passes) (warning) 
+
+assert alu_overflow_msb (sva)
+  Instance: core.alu_overflow_msb
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 177
+  Severity: error
+  Stats:   depth=1 gates=10 flops=0
+
+assert alu_fir_reset (sva)
+  Instance: core.alu_fir_reset
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 178
+  Severity: error
+  Stats:   depth=2 gates=8 flops=2
+
+assert state_sequence0 (sva)
+  Instance: core.state_sequence0
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 181
+  Severity: error
+  Stats:   depth=2 gates=6 flops=1
+
+assert state_sequence1 (sva)
+  Instance: core.state_sequence1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 182
+  Severity: error
+  Stats:   depth=2 gates=6 flops=1
+
+assert state_sequence2 (sva)
+  Instance: core.state_sequence2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 183
+  Severity: error
+  Stats:   depth=2 gates=5 flops=1
+
+assert state_sequence3 (sva)
+  Instance: core.state_sequence3
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 184
+  Severity: error
+  Stats:   depth=2 gates=7 flops=1
+
+assert state_cycle0 (sva)
+  Instance: core.state_cycle0
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 187
+  Severity: error
+  Stats:   depth=2 gates=8 flops=2
+
+assert state_cycle1 (sva)
+  Instance: core.state_cycle1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 188
+  Severity: error
+  Stats:   depth=66 gates=72 flops=66
+
+assert state_cycle2 (sva)
+  Instance: core.state_cycle2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 189
+  Severity: error
+  Stats:   depth=67 gates=73 flops=67
+
+assert result_cycle_1 (sva)
+  Instance: core.result_cycle_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 199
+  Severity: error
+  Stats:   depth=66 gates=274 flops=66
+
+assert control_signal1 (sva)
+  Instance: core.control_signal1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 202
+  Severity: error
+  Stats:  gates=11 flops=3
+  SAFETY_EMPTY (Safety empty property) (warning) 
+
+assert control_signal2 (sva)
+  Instance: core.control_signal2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 203
+  Severity: error
+  Stats:  gates=8 flops=2
+  SAFETY_EMPTY (Safety empty property) (warning) 
+
+assert control_signal3 (sva)
+  Instance: core.control_signal3
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 204
+  Severity: error
+  Stats:  gates=8 flops=2
+  SAFETY_EMPTY (Safety empty property) (warning) 
+
+assert control_signal4 (sva)
+  Instance: core.control_signal4
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 205
+  Severity: error
+  Stats:  gates=8 flops=2
+  SAFETY_EMPTY (Safety empty property) (warning) 
+
+assume start_assume (sva)
+  Instance: core.start_assume
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/core.sv, Line 192
+  Severity: error
   Stats:   depth=1 gates=5 flops=0
 
 
 ===============================================================================
-Module: ovl_no_underflow
+Module: CMEM_W
 ===============================================================================
 Parameters: 
-    parameter  severity_level = 1
-    parameter  width = 6
-    parameter  min = 0
-    parameter  max = 63
-    parameter  property_type = 0
-    parameter  msg = VIOLATION
-    parameter  coverage_level = 2
-    parameter  clock_edge = 1
-    parameter  reset_polarity = 0
-    parameter  gating_type = 1
-    parameter  assert_name = OVL_NO_UNDERFLOW
-    parameter  OVL_COVER_SANITY_ON = 0
-    parameter  OVL_COVER_BASIC_ON = 2
-    parameter  OVL_COVER_CORNER_ON = 0
-    parameter  OVL_COVER_STATISTIC_ON = 0
+    parameter  MAX_ADDR = 6'b111111
 Summary
 -------------------------------------------------------------------------------
-Assertions   : 1 
+Assertions   : 3 
 Assumptions  : 0 
-Covers       : 1 
+Covers       : 0 
 -------------------------------------------------------------------------------
-assert ovl_assert.A_ASSERT_NO_UNDERFLOW_P (sva)
-  Instance: no_underflow.ovl_assert.A_ASSERT_NO_UNDERFLOW_P
-  Location: File /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/sva05/assert_no_underflow_logic.sv, Line 35
-  Severity: info
-  Message: VIOLATION
-  Stats:   depth=2 gates=13 flops=1
+assert address_in_range_1 (sva)
+  Instance: cmem_w_inst.address_in_range_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/CMEM_W.sv, Line 16
+  Severity: error
+  Stats:   depth=1 gates=5 flops=0
 
-cover ovl_cover.ovl_cover_basic.cover_test_expr_at_min (sva)
-  Instance: no_underflow.ovl_cover.ovl_cover_basic.cover_test_expr_at_min
-  Location: File /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/sva05/assert_no_underflow_logic.sv, Line 89
-  Severity: info
-  Message: VIOLATION
+assert address_known_1 (sva)
+  Instance: cmem_w_inst.address_known_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/CMEM_W.sv, Line 22
+  Severity: error
+  Stats:   depth=1 gates=7 flops=0
+
+assert data_known_1 (sva)
+  Instance: cmem_w_inst.data_known_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/CMEM_W.sv, Line 28
+  Severity: error
+  Stats:   depth=1 gates=6 flops=0
+
+
+===============================================================================
+Module: alu
+===============================================================================
+Summary
+-------------------------------------------------------------------------------
+Assertions   : 4 
+Assumptions  : 0 
+Covers       : 0 
+-------------------------------------------------------------------------------
+assert overflow_sum (sva)
+  Instance: alu_inst.overflow_sum
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/alu.sv, Line 18
+  Severity: error
   Stats:   depth=1 gates=3 flops=0
+
+assert x_b_never_x (sva)
+  Instance: alu_inst.x_b_never_x
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/alu.sv, Line 19
+  Severity: error
+  Stats:   depth=1 gates=5 flops=0
+
+assert accuracy_0 (sva)
+  Instance: alu_inst.accuracy_0
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/alu.sv, Line 20
+  Severity: error
+  Stats:   depth=1 gates=2 flops=0
+
+assert accuracy_1 (sva)
+  Instance: alu_inst.accuracy_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/alu.sv, Line 21
+  Severity: error
+  Stats:   depth=1 gates=2 flops=0
+
+
+===============================================================================
+Module: fifo_shift_reg
+===============================================================================
+Parameters: 
+    parameter  BIT_WIDTH = 16
+    parameter  NUM_WORDS = 64
+    parameter  ADDR_WIDTH = 6
+Summary
+-------------------------------------------------------------------------------
+Assertions   : 4 
+Assumptions  : 0 
+Covers       : 3 
+-------------------------------------------------------------------------------
+assert check_rst_raddr (sva)
+  Instance: fifo_inst.check_rst_raddr
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 62
+  Severity: error
+  Stats:   depth=1 gates=5 flops=0
+
+assert check_rst_rdata (sva)
+  Instance: fifo_inst.check_rst_rdata
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 63
+  Severity: error
+  Stats:   depth=1 gates=5 flops=0
+
+assert check_fifo_full (sva)
+  Instance: fifo_inst.check_fifo_full
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 64
+  Severity: error
+  Stats:   depth=2 gates=9 flops=2
+
+assert rdata_never_x (sva)
+  Instance: fifo_inst.rdata_never_x
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 67
+  Severity: error
+  Stats:   depth=1 gates=0 flops=0
+  ALWAYS_PASSES (Property always passes) (warning) 
+
+cover fifo_cover_0 (sva)
+  Instance: fifo_inst.fifo_cover_0
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 68
+  Severity: info
+  Stats:   depth=1 gates=0 flops=0
+  ALWAYS_PASSES (Property always passes) (warning) 
+
+cover fifo_cover_1 (sva)
+  Instance: fifo_inst.fifo_cover_1
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 69
+  Severity: info
+  Stats:   depth=1 gates=1 flops=0
+
+cover fifo_cover_2 (sva)
+  Instance: fifo_inst.fifo_cover_2
+  Location: File /user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv, Line 70
+  Severity: info
+  Stats:   depth=1 gates=1 flops=0
 

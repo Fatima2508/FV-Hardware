@@ -1,4 +1,12 @@
-ovl_no_overflow_719753218.utg.db:0
-ovl_no_underflow_1942462332.utg.db:7252
-fifo_shift_reg_866731237.utg.db:14514
-fifo_shift_reg.utg.db:18466
+Zin_BUF1.utg.db:0
+CMEM_588120257.utg.db:1642
+CMEM_W_1881928550.utg.db:14850
+alu_1421425162.utg.db:18105
+REG_N_1877319523.utg.db:21686
+counter_1935477094.utg.db:24359
+counter_113621539.utg.db:27023
+ovl_no_overflow_5_1500908493.utg.db:29702
+ovl_no_underflow_5_1500908493.utg.db:31962
+fifo_shift_reg_72891415.utg.db:34224
+core_2099733969.utg.db:39679
+core.utg.db:49822

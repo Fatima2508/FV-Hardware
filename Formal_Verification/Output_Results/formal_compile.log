@@ -2,15 +2,15 @@
 # Questa Static Verification System
 # Version 2019.2_1 linux_x86_64 18 May 2019
 
-log created Fri Dec 23 13:31:08 2022 by fd2508 on remote01
+log created Fri Dec 23 22:10:39 2022 by ig2451 on remote02
 
 
 Command: netlist elaborate
 Command arguments:
     -zdb
-      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+      /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/qcache/DB/zdb_1
     -tool propcheck
-    -d fifo_shift_reg
+    -d core
 
 
 ## Elaborating Design...
@@ -18,138 +18,359 @@ Reading MTI mapping for library mapping
 Writing all MTI mappings to vmap output ...
 
 Top level modules:
-	fifo_shift_reg
+	core
 
 Analyzing design...
+-- Loading module z0in_work.core
+-- Loading module z0in_work.CMEM_W
+-- Loading module z0in_work.CMEM
+-- Loading module z0in_work.alu
+-- Loading module z0in_work.REG_N
+-- Loading module z0in_work.counter
 -- Loading module z0in_work.fifo_shift_reg
--- Loading module z0in_work.ovl_no_overflow
--- Loading module z0in_work.ovl_no_underflow
-Warning : Vopt warning.  ./fifo_shift_reg.sv(43): (vopt-2241) Connection width does not match width of port 'fire'. The port definition is at: /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_underflow.v(6).  [parser-285]
+Warning : Vopt warning.  ./fifo_shift_reg.sv(41): (vopt-2672) Module 'ovl_no_overflow' is not defined.  [parser-285]
         : Elaboration will continue.
-Warning : Vopt warning.  ./fifo_shift_reg.sv(41): (vopt-2241) Connection width does not match width of port 'fire'. The port definition is at: /tools/mentor/questa_2019.2_1/linux_x86_64/share/assertion_lib/OVL/verilog/ovl_no_overflow.v(6).  [parser-285]
+Warning : Vopt warning.  ./fifo_shift_reg.sv(43): (vopt-2672) Module 'ovl_no_underflow' is not defined.  [parser-285]
         : Elaboration will continue.
-Optimizing 3 design-units (inlining 0/3 module instances):
--- Optimizing module z0in_work.ovl_no_overflow(fast)
--- Optimizing module z0in_work.ovl_no_underflow(fast)
+Optimizing 8 design-units (inlining 0/7 module instances, 0/1 cell instances):
+-- Optimizing module z0in_work.CMEM(fast)
+-- Optimizing module z0in_work.CMEM_W(fast)
+-- Optimizing module z0in_work.alu(fast)
+-- Optimizing module z0in_work.REG_N(fast)
+-- Optimizing module z0in_work.counter(fast)
+-- Optimizing module z0in_work.counter(fast__1)
 -- Optimizing module z0in_work.fifo_shift_reg(fast)
-Optimized design name is zi_opt_csl_1817315319_1
-Summary: 2 Warnings in processing "netlist elaborate"
-End of log Fri Dec 23 13:31:10 2022
+Warning : Unresolved module.  Instance 'no_overflow', Module 'ovl_no_overflow', File '/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv', Line 41.  [parser-47]
+        : Parsing will continue.
+Warning : Unresolved module.  Instance 'no_underflow', Module 'ovl_no_underflow', File '/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/fifo_shift_reg.sv', Line 43.  [parser-47]
+        : Parsing will continue.
+-- Optimizing module z0in_work.core(fast)
+Optimized design name is zi_opt_csl_244379322_1
+Summary: 4 Warnings in processing "netlist elaborate"
+End of log Fri Dec 23 22:10:42 2022
 
 
 # 
 # Questa Static Verification System
 # Version 2019.2_1 linux_x86_64 18 May 2019
 
-log created Fri Dec 23 13:31:10 2022 by fd2508 on remote01
+log created Fri Dec 23 22:10:42 2022 by ig2451 on remote02
 
 
 Command: netlist create
 Command arguments:
     -zdb
-      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
+      /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/qcache/DB/zdb_1
     -tool propcheck
-    -d fifo_shift_reg
+    -d core
 
 
 ## Synthesizing netlist...
+Warning : Signal specified for directive has no match.  Signal 'read_clk', Module 'core', Directive 'netlist clock', File '/homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/qs_files/directives.tcl', Line 4.  [hdl-77]
+        : Signal will be skipped.
+Warning : Signal specified for directive has no match.  Signal 'write_clk', Module 'core', Directive 'netlist clock', File '/homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/qs_files/directives.tcl', Line 5.  [hdl-77]
+        : Signal will be skipped.
+Processing module 'Zin_BUF1'
+Processing module 'CMEM'
+Elaborating module 'CMEM'.
+Processing module 'CMEM_W'
+Elaborating module 'CMEM_W'.
+Processing module 'alu'
+Elaborating module 'alu'.
+Processing module 'REG_N'
+Elaborating module 'REG_N'.
+Processing module 'counter'
+Elaborating module 'counter'.
+Processing module 'counter(1)'
+Elaborating module 'counter(1)'.
 Processing module 'ovl_no_overflow'
-Elaborating module 'ovl_no_overflow'.
+Info    : Considering module as a black box.  Module 'ovl_no_overflow'.  [elaboration-4]
 Processing module 'ovl_no_underflow'
-Elaborating module 'ovl_no_underflow'.
+Info    : Considering module as a black box.  Module 'ovl_no_underflow'.  [elaboration-4]
 Processing module 'fifo_shift_reg'
 Elaborating module 'fifo_shift_reg'.
+Processing module 'core'
+Elaborating module 'core'.
 
-##Time Taken (Synthesis) = 170000.000000 ticks = 0.170000 secs
+##Time Taken (Synthesis) = 3060000.000000 ticks = 3.060000 secs
 
-Summary: 2 Warnings in processing "netlist create"
-End of log Fri Dec 23 13:31:11 2022
+Summary: 6 Warnings in processing "netlist create"
+End of log Fri Dec 23 22:10:46 2022
 
 
 # 
 # Questa Static Verification System
 # Version 2019.2_1 linux_x86_64 18 May 2019
 
-log created Fri Dec 23 13:31:11 2022 by fd2508 on remote01
+log created Fri Dec 23 22:10:47 2022 by ig2451 on remote02
 
 
 Command: formal compile
 Command arguments:
     -zdb
-      /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/DB/zdb_1
-    -d fifo_shift_reg
+      /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/qcache/DB/zdb_1
+    -d core
 
 
 ## Processing Formal Logic...
+Warning : Signal specified for directive has no match.  Signal 'read_clk', Module 'core', Directive 'netlist clock', File '/homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/qs_files/directives.tcl', Line 4.  [hdl-77]
+        : Signal will be skipped.
+Warning : Signal specified for directive has no match.  Signal 'write_clk', Module 'core', Directive 'netlist clock', File '/homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/qs_files/directives.tcl', Line 5.  [hdl-77]
+        : Signal will be skipped.
+Processing module 'Zin_BUF1'
+Processing module 'CMEM'
+Restoring module 'CMEM'.
+Processing module 'CMEM_W'
+Restoring module 'CMEM_W'.
+Processing module 'alu'
+Restoring module 'alu'.
+Processing module 'REG_N'
+Restoring module 'REG_N'.
+Processing module 'counter'
+Restoring module 'counter'.
+Processing module 'counter(1)'
+Restoring module 'counter(1)'.
 Processing module 'ovl_no_overflow'
 Restoring module 'ovl_no_overflow'.
+Info    : Considering module as a black box.  Module 'ovl_no_overflow'.  [elaboration-4]
 Processing module 'ovl_no_underflow'
 Restoring module 'ovl_no_underflow'.
+Info    : Considering module as a black box.  Module 'ovl_no_underflow'.  [elaboration-4]
 Processing module 'fifo_shift_reg'
 Restoring module 'fifo_shift_reg'.
+Processing module 'core'
+Restoring module 'core'.
+Flattening design 'CMEM'.
+Flattening design 'CMEM_W'.
+Flattening design 'alu'.
+Flattening design 'REG_N'.
+Flattening design 'counter'.
+Flattening design 'counter(1)'.
 Flattening design 'ovl_no_overflow'.
 Flattening design 'ovl_no_underflow'.
 Flattening design 'fifo_shift_reg'.
-Info    : Detected reset.  Reset: fifo_reset, polarity: synchronous, active: high.  [netlist-12]
-Info    : Detected clock.  Clock: read_clk, polarity: posedge.  [netlist-11]
-Info    : Detected clock.  Clock: write_clk, polarity: posedge.  [netlist-11]
-Info    : Detected clock.  Clock: write_clk, polarity: negedge.  [netlist-11]
-Info    : Detected clock.  Clock: read_clk, polarity: negedge.  [netlist-11]
-Design is processed for formal verification.  Design 'fifo_shift_reg'.
+Flattening design 'core'.
+Info    : Detected reset.  Reset: rstn, polarity: synchronous, active: low.  [netlist-12]
+Info    : Detected clock.  Clock: clk, polarity: posedge.  [netlist-11]
+Info    : Detected clock.  Clock: clk, polarity: negedge.  [netlist-11]
+Error   : Design has combinational loop.  Please check 'Design Check Details' in 'formal_design.rpt'.  [formal-279]
+Design is processed for formal verification.  Design 'core'.
 
 Clocks
 ------------------------------------------------------------------------------
 Port                                   Period         Waveform    Edges
 ------------------------------------------------------------------------------
-read_clk                                   10              0 5    PE NE
-write_clk                                  20             0 10    PE NE
+clk                      [inferred]       100             0 50    PE NE
 ------------------------------------------------------------------------------
 
 Blackboxes
 ------------------------------------------------------------------------------
 Module name                                                Reason
 ------------------------------------------------------------------------------
-<no blackboxed modules>
+ovl_no_overflow                                            [unresolved module]
+ovl_no_underflow                                           [unresolved module]
 ------------------------------------------------------------------------------
 
 Inferred directives
 ------------------------------------------------------------------------------
-<no inferred directives>
+netlist clock clk -period 100 -waveform 0 50
+netlist blackbox ovl_no_overflow
+netlist blackbox ovl_no_underflow
 ------------------------------------------------------------------------------
 
-Design is linked for formal analysis.  Design 'fifo_shift_reg'.
+Design is linked for formal analysis.  Design 'core'.
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.LATCHED_CEN'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.LATCHED_WEN'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.Qi'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[63]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[62]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[61]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[60]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[59]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[58]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[57]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[56]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[55]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[54]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[53]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[52]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[51]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[50]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[49]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[48]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[47]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[46]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[45]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[44]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[43]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[42]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[41]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[40]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[39]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[38]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[37]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[36]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[35]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[34]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[33]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[32]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[31]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[30]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[29]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[28]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[27]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[26]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[25]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[24]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[23]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[22]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[21]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[20]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[19]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[18]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[17]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[16]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[15]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[14]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[13]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[12]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[11]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[10]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[9]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[8]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[7]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[6]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[5]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[4]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[3]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[2]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.mem[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.last_status[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.last_status[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[0]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[1]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[2]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[3]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[4]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[5]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[6]'.  [formal-280]
+Error   : Multiply-driven register/latch found.  Latch: 'cmem_w_inst.cmem_inst.rows[7]'.  [formal-280]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.Qi'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[63]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[62]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[61]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[60]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[59]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[58]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[57]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[56]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[55]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[54]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[53]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[52]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[51]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[50]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[49]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[48]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[47]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[46]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[45]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[44]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[43]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[42]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[41]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[40]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[39]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[38]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[37]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[36]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[35]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[34]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[33]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[32]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[31]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[30]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[29]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[28]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[27]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[26]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[25]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[24]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[23]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[22]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[21]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[20]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[19]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[18]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[17]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[16]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[15]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[14]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[13]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[12]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[11]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[10]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[9]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[8]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[7]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[6]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[5]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[4]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[3]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[2]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[1]'.  [formal-249]
+Warning : Latch is not enabled by a clock.  Latch 'cmem_w_inst.cmem_inst.mem[0]'.  [formal-249]
 Formal model has been created.
 
 Property Summary
 -------------------------------------------------------------------------------
-Total  Directives :4
-Assert Directives :2
-Assume Directives :0
-Cover  Directives :2
+Total  Directives :40
+Assert Directives :36
+Assume Directives :1
+Cover  Directives :3
 
 SVA Summary
 -------------------------------------------------------------------------------
 SVA Directive Type        Directives           Checkers
 -------------------------------------------------------------------------------
-Assert                         2                   2
-Assume                         0                   0
-Cover                          2                   2
+Assert                        36                  36
+Assume                         1                   1
+Cover                          3                   3
 -------------------------------------------------------------------------------
 
+Design Checks Summary
+-------------------------------------------------------------------------------
+Check                              Found
+-------------------------------------------------------------------------------
+COMBO_LOOP                              2
+DECLARATION_UNDRIVEN                   27
+LOGIC_UNDRIVEN                          2
+-------------------------------------------------------------------------------
+Total                                 31
+-------------------------------------------------------------------------------
+
+
 To see results in the GUI run:
-qverify /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/formal_compile.db
+qverify /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/formal_compile.db
 
 
 Message Summary
 ---------------------------------------------------------------------------
 Count  Type     Message ID         Summary
 ---------------------------------------------------------------------------
+    1  Error    formal-279         Design has combinational loop.
+   77  Error    formal-280         Multiply-driven register/latch found.
+   65  Warning  formal-249         Latch is not enabled by a clock.
+    4  Warning  hdl-77             Signal specified for directive has no match.
     2  Warning  parser-285         Vopt warning.
-    4  Info     netlist-11         Detected clock.
+    2  Warning  parser-47          Unresolved module.
+    4  Info     elaboration-4      Considering module as a black box.
+    2  Info     netlist-11         Detected clock.
     1  Info     netlist-12         Detected reset.
 
-Summary: 2 Warnings in formal compile
-Final Process Statistics: Max memory 479MB, CPU time 0s, Total time 4s
-End of log Fri Dec 23 13:31:12 2022
+Summary: 78 Errors, 73 Warnings in formal compile
+Final Process Statistics: Max memory 647MB, CPU time 7s, Total time 10s
+End of log Fri Dec 23 22:10:50 2022
 
 

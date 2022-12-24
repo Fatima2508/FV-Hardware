@@ -6,6 +6,7 @@ module CMEM_W(Q, CLK, CEN, WEN, A, D);
     input [5:0]   A;
     input [15:0]  D;
 
+    parameter MAX_ADDR = 6'b111111;
     CMEM cmem_inst (.Q(Q), .CLK(CLK), .CEN(CEN), .WEN(WEN), .A(A), .D(D));
 
     property address_in_range;

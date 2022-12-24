@@ -20,18 +20,16 @@ VLOG = ${QHOME}/modeltech/plat/vlog
 compile:
 	$(VLIB) work
 	$(VMAP) work work
-	$(VLOG) -sv ./fifo_shift_reg.sv  \
-		+libext+.v+.sv -y ${QHOME}/share/assertion_lib/OVL/verilog \
-		+incdir+${QHOME}/share/assertion_lib/OVL/verilog \
-		+define+OVL_SVA+OVL_ASSERT_ON+OVL_COVER_ON+OVL_XCHECK_OFF
+	$(VLOG) -sv ./core.sv ./alu.sv ./CMEM_W.sv ./CMEM.sv ./counter.sv ./REG_N.sv ./fifo_shift_reg.sv
+	
 	
 
 ###### Run Formal Analysis #####################################################
 formal:
 	qverify -c -od Output_Results -do "\
 		do qs_files/directives.tcl; \
-		formal compile -d fifo_shift_reg; \
-		formal verify -init qs_files/fifo.init \
+		formal compile -d core; \
+		formal verify -init qs_files/core.init \
 		-timeout 5m; \
 		exit"
 

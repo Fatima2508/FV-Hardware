@@ -13,13 +13,13 @@ if (! -e $vmap_exec) then
   exit 1
 endif
 
-cp -f /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/Output_Results/qcache/AN/modelsim.ini .
+cp -f /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/Output_Results/qcache/AN/modelsim.ini .
 
-# $vlib_exec /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/./work
+# $vlib_exec /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/./work
 if($status == 0) then
-  $vmap_exec -modelsimini modelsim.ini work /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/./work
+  $vmap_exec -modelsimini modelsim.ini work /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/./work
 else
-  echo "** Error: Library mapping failed. (Command: 'vlib /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/./work')"
+  echo "** Error: Library mapping failed. (Command: 'vlib /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/./work')"
 endif
 # $vlib_exec /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../std
 # if($status == 0) then
@@ -153,9 +153,9 @@ endif
 # else
 #   echo "** Error: Library mapping failed. (Command: 'vlib /tools/mentor/questa_2019.2_1/share/modeltech/linux_x86_64/../vh_ux01v_lib')"
 # endif
-# $vlib_exec /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/.//Output_Results/qcache/AN/zin_vopt_work
+# $vlib_exec /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/.//Output_Results/qcache/AN/zin_vopt_work
 if($status == 0) then
-  $vmap_exec -modelsimini modelsim.ini z0in_work_ctrl /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/.//Output_Results/qcache/AN/zin_vopt_work
+  $vmap_exec -modelsimini modelsim.ini z0in_work_ctrl /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/.//Output_Results/qcache/AN/zin_vopt_work
 else
-  echo "** Error: Library mapping failed. (Command: 'vlib /homes/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR/.//Output_Results/qcache/AN/zin_vopt_work')"
+  echo "** Error: Library mapping failed. (Command: 'vlib /homes/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification/.//Output_Results/qcache/AN/zin_vopt_work')"
 endif

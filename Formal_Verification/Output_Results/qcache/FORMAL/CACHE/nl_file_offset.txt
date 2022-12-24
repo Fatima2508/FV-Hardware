@@ -1,3 +1,11 @@
-ovl_no_overflow_719753218.sedb:0
-ovl_no_underflow_1942462332.sedb:33376
-fifo_shift_reg.sedb:66275
+Zin_BUF1.sedb:0
+CMEM_588120257.sedb:7738
+CMEM_W_1881928550.sedb:2675204
+alu_1421425162.sedb:2695791
+REG_N_1877319523.sedb:2717161
+counter_1935477094.sedb:2729692
+counter_113621539.sedb:2742418
+ovl_no_overflow_5_1500908493.sedb:2755159
+ovl_no_underflow_5_1500908493.sedb:2763786
+fifo_shift_reg_72891415.sedb:2772415
+core.sedb:2849824

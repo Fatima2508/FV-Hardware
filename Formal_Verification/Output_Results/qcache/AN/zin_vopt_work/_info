@@ -7,12 +7,12 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/user/stud/fall21/Fd2508/Desktop/FV/FV-Hardware/FIR
-Tzi_opt_csl_1817315319_1
-!s110 1671820269
-VdDRJ0AWMgAHhbOIz`RBIj0
-09 14 4 z0in_work fifo_shift_reg fast 0
+d/user/stud/fall21/ig2451/FV/FV-Hardware/Formal_Verification
+Tzi_opt_csl_244379322_1
+!s110 1671851441
+V0A3cV?IY<6eaPAR6?38ed2
+09 4 4 z0in_work core fast 0
 o-nologo -noclknetalias -nolock -noOptProcessWaits -noinstaliasopt -pslallowseverity -suppress 153 -suppress 3053 -suppress 8884 -suppress 8885 -suppress 1127 -suppress 7033 -suppress 3838 -suppress 12003 -suppress 3054 -suppress 2734 +acc=a -0in_elab -opt=-optStmt -opt=-optExpr -noStaticExprOpt +designfile+Output_Results/qcache/VISUALIZER/design.bin +convertvhdlgenbracket -suppress 143 -work work -mixedansiports
 tCvgOpt 0
-nzi_opt_csl_1817315319_1
+nzi_opt_csl_244379322_1
 OL;O;2019.2_1;69
